@@ -1,5 +1,7 @@
 {
   "name": "mtg-commander",
   "dependencies": {
+    "framework7": "^1.5.4",
+    "foundation-sites": "^6.2.4"
   }
 }

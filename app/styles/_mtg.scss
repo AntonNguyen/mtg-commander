@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+}
+
+.counterValue,
+.increment,
+.decrement {
+  text-align: center;
+}
+
+.divider {
+  border-bottom: 1px solid #000;
+}
+
+.life {
+  font-size: 100px;
+}
+
+
+.modifier {
+  padding: 63px 10px;
+}
+
+.opponentTracker {
+  width: 125px;
+  height: 125px;
+}
+
+.healthy {
+  background-color: green;
+}
+
+.dead {
+  background-color: red;
+}
+
+.almostDead {
+  background-color: yellow;
+}

@@ -1,5 +1,49 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="container {{healthColor}}">
+  <h1 class="text-center divider">MTG Commander</h1>
+  <button class="button" {{action 'reset'}} >Reset</button>
 
-{{outlet}}
+  <h2 class="text-center divider">Life</h2>
+  <div class="row align-middle">
+    <div class="small-2 columns modifier decrement" {{action 'decreaseLife'}}>
+      -
+    </div>
+    <div class="small-8 columns">
+      <div class="counterValue life">
+        {{ model.player.life }}
+      </div>
+    </div>
+    <div class="small-2 columns modifier increment" {{action 'increaseLife'}}>
+      +
+    </div>
+  </div>
+
+  <h2 class="text-center divider">Poison Counters</h2>
+  <div class="row align-middle">
+    <div class="small-2 columns modifier decrement" {{action 'decreasePoison'}}>
+      -
+    </div>
+    <div class="small-8 columns">
+      <div class="counterValue life">
+        {{ model.player.poisonCounters }}
+      </div>
+    </div>
+    <div class="small-2 columns modifier increment" {{action 'increasePoison'}}>
+      +
+    </div>
+  </div>
+
+  <h2 class="text-center divider">Commander Damage</h2>
+  <button class="button" {{action 'addOpponent'}} >Add Opponent</button>
+
+  {{#if model.player.opponents}}
+    <div class="row small-up-2 medium-up-3 large-up-4">
+      {{#each model.player.opponents as |opponent|}}
+        {{opponent-tracker
+          opponent=opponent
+        }}
+      {{/each}}
+    </div>
+  {{else}}
+    No commander damage taken
+  {{/if}}
+</div>
